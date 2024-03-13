@@ -16,6 +16,14 @@
 		4C7414952B922DC100799D64 /* OpenAPIURLSession in Frameworks */ = {isa = PBXBuildFile; productRef = 4C7414942B922DC100799D64 /* OpenAPIURLSession */; };
 		4C7414992B922E3900799D64 /* openapi.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4C7414982B922E3900799D64 /* openapi.yaml */; };
 		4C74149B2B922E8800799D64 /* openapi-generator-config.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4C74149A2B922E8800799D64 /* openapi-generator-config.yaml */; };
+		4C83283A2BA2325000A11534 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8328392BA2325000A11534 /* SearchService.swift */; };
+		4C83283C2BA232CC00A11534 /* ScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C83283B2BA232CC00A11534 /* ScheduleService.swift */; };
+		4C83283E2BA2331100A11534 /* ThreadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C83283D2BA2331100A11534 /* ThreadService.swift */; };
+		4C8328402BA2336F00A11534 /* NearestSettelementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C83283F2BA2336F00A11534 /* NearestSettelementService.swift */; };
+		4C8328422BA2339E00A11534 /* CarrierService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8328412BA2339E00A11534 /* CarrierService.swift */; };
+		4C8328442BA233E100A11534 /* StationListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8328432BA233E100A11534 /* StationListService.swift */; };
+		4C8328462BA2340600A11534 /* CopyrightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8328452BA2340600A11534 /* CopyrightService.swift */; };
+		4C8328492BA234CB00A11534 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8328482BA234CB00A11534 /* Authorization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +35,14 @@
 		4C7414842B92251300799D64 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4C7414982B922E3900799D64 /* openapi.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = openapi.yaml; sourceTree = "<group>"; };
 		4C74149A2B922E8800799D64 /* openapi-generator-config.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "openapi-generator-config.yaml"; sourceTree = "<group>"; };
+		4C8328392BA2325000A11534 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		4C83283B2BA232CC00A11534 /* ScheduleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleService.swift; sourceTree = "<group>"; };
+		4C83283D2BA2331100A11534 /* ThreadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadService.swift; sourceTree = "<group>"; };
+		4C83283F2BA2336F00A11534 /* NearestSettelementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestSettelementService.swift; sourceTree = "<group>"; };
+		4C8328412BA2339E00A11534 /* CarrierService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierService.swift; sourceTree = "<group>"; };
+		4C8328432BA233E100A11534 /* StationListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListService.swift; sourceTree = "<group>"; };
+		4C8328452BA2340600A11534 /* CopyrightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyrightService.swift; sourceTree = "<group>"; };
+		4C8328482BA234CB00A11534 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +80,8 @@
 				4C7414982B922E3900799D64 /* openapi.yaml */,
 				4C74149A2B922E8800799D64 /* openapi-generator-config.yaml */,
 				4C74147D2B92250A00799D64 /* ScheduleApp.swift */,
-				4C475CDE2B9501CB0069C98D /* NearestStationsService.swift */,
 				4C74147F2B92250A00799D64 /* ContentView.swift */,
+				4C8328372BA231DC00A11534 /* Service */,
 				4C7414812B92251300799D64 /* Assets.xcassets */,
 				4C7414832B92251300799D64 /* Preview Content */,
 			);
@@ -78,6 +94,30 @@
 				4C7414842B92251300799D64 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4C8328372BA231DC00A11534 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4C8328472BA234B600A11534 /* Authorization */,
+				4C475CDE2B9501CB0069C98D /* NearestStationsService.swift */,
+				4C8328392BA2325000A11534 /* SearchService.swift */,
+				4C83283D2BA2331100A11534 /* ThreadService.swift */,
+				4C83283F2BA2336F00A11534 /* NearestSettelementService.swift */,
+				4C8328412BA2339E00A11534 /* CarrierService.swift */,
+				4C8328432BA233E100A11534 /* StationListService.swift */,
+				4C8328452BA2340600A11534 /* CopyrightService.swift */,
+				4C83283B2BA232CC00A11534 /* ScheduleService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4C8328472BA234B600A11534 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				4C8328482BA234CB00A11534 /* Authorization.swift */,
+			);
+			path = Authorization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,9 +202,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C8328422BA2339E00A11534 /* CarrierService.swift in Sources */,
 				4C7414802B92250A00799D64 /* ContentView.swift in Sources */,
+				4C83283C2BA232CC00A11534 /* ScheduleService.swift in Sources */,
+				4C8328442BA233E100A11534 /* StationListService.swift in Sources */,
+				4C8328492BA234CB00A11534 /* Authorization.swift in Sources */,
+				4C83283A2BA2325000A11534 /* SearchService.swift in Sources */,
+				4C8328402BA2336F00A11534 /* NearestSettelementService.swift in Sources */,
 				4C475CDF2B9501CB0069C98D /* NearestStationsService.swift in Sources */,
 				4C74147E2B92250A00799D64 /* ScheduleApp.swift in Sources */,
+				4C83283E2BA2331100A11534 /* ThreadService.swift in Sources */,
+				4C8328462BA2340600A11534 /* CopyrightService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
