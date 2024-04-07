@@ -29,7 +29,7 @@ struct ContentView: View {
         )
         let service = NearestStationsService(
             client: client,
-            apikey: APIKey
+            apikey: apiKey
         )
         Task {
             do {
@@ -51,7 +51,7 @@ struct ContentView: View {
         )
         let service = SearchService (
             client: client,
-            apikey: APIKey
+            apikey: apiKey
         )
         Task {
             do {
@@ -71,7 +71,7 @@ struct ContentView: View {
         
         let service = ThreadService(
             client: client,
-            apikey: APIKey
+            apikey: apiKey
         )
         Task {
             do {
@@ -91,7 +91,7 @@ struct ContentView: View {
         
         let service = NearestSettlementService(
             client: client,
-            apikey: APIKey
+            apikey: apiKey
         )
         
         Task {
@@ -112,7 +112,7 @@ struct ContentView: View {
         )
         let service = CarrierService(
             client: client,
-            apikey: APIKey
+            apikey: apiKey
         )
         
         Task {
@@ -133,7 +133,7 @@ struct ContentView: View {
         )
         let service = ScheduleService(
             client: client,
-            apikey: APIKey
+            apikey: apiKey
         )
         Task {
             do {
@@ -153,7 +153,7 @@ struct ContentView: View {
         
         let service = CopyrightService(
             client: client,
-            apikey: APIKey
+            apikey: apiKey
         )
         Task {
             do {
@@ -172,7 +172,7 @@ struct ContentView: View {
         )
         let service = StationListService (
             client: client,
-            apikey: APIKey
+            apikey: apiKey
         )
         
         Task {
