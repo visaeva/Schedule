@@ -5,6 +5,7 @@ struct SettingsView: View {
     @State private var isFeatureEnabled = false
     @AppStorage("isDarkMode") private var isDarkMode = false
     @State private var showWebView = false
+    @State private var isInternetAvailable = true
     
     var body: some View {
         NavigationView {
@@ -15,8 +16,8 @@ struct SettingsView: View {
                     .foregroundColor(Color("blackDay"))
                     .tint(Color("blueUniversal"))
                 NavigationLink(
-                    destination: WebView()
-                        .navigationTitle("Пользовательское соглашение")
+                    destination: isInternetAvailable ? AnyView(WebView()
+                        .navigationTitle("Пользовательское соглашение")) : AnyView(ErrorInternetView())
                 ) {
                     HStack {
                         Text("Пользовательское соглашение")
@@ -45,6 +46,9 @@ struct SettingsView: View {
             .onChange(of: isDarkMode) { newValue in
                 toggleTheme(newValue)
             }
+            .onAppear {
+                checkInternetConnection()
+            }
             .navigationTitle("Пользовательское соглашение")
             .font(.system(size: 17, weight: .bold))
             .foregroundColor(.black)
@@ -59,6 +63,28 @@ struct SettingsView: View {
         }
     }
     
+    func checkInternetConnection() {
+        guard let url = URL(string: "https://yandex.ru/legal/practicum_offer/") else { return }
+        
+        URLSession.shared.dataTask(with: url) { (_, response, error) in
+            if let error = error {
+                print("Error checking internet connection: \(error)")
+                DispatchQueue.main.async {
+                    self.isInternetAvailable = false
+                }
+                return
+            }
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                DispatchQueue.main.async {
+                    self.isInternetAvailable = true
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.isInternetAvailable = false
+                }
+            }
+        }.resume()
+    }
 }
 
 #Preview {
