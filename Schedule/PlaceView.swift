@@ -46,6 +46,7 @@ struct PlaceView: View {
                     .background(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .padding(.leading, 12)
+                    .padding(.top, 10)
                     .padding(3)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
@@ -65,6 +66,7 @@ struct PlaceView: View {
                     }
                 }) {
                     Image(systemName: "arrow.2.squarepath")
+                        .font(.system(size: 15, weight: .bold))
                         .foregroundColor(Color("blueUniversal"))
                         .padding()
                         .background(Color.white)

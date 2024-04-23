@@ -50,10 +50,10 @@ struct CityListView: View {
                                     .frame(width: 25, height: 25)
                                     .scaleEffect(1.4)
                             }
-                            .frame(height: 60)
-                            .listRowSeparator(.hidden)
+                            .frame(height: 40)
                             .background(Color.whiteNight)
                         }
+                        .listRowSeparator(.hidden)
                         .listRowBackground(Color.whiteNight)
                     }
                     .listStyle(.plain)

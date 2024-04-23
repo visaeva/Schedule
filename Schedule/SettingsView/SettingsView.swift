@@ -16,7 +16,6 @@ struct SettingsView: View {
                     .tint(Color("blueUniversal"))
                 NavigationLink(
                     destination: isInternetAvailable ? AnyView(WebView()
-                        .navigationTitle("Пользовательское соглашение") 
                         .background(Color.whiteNight)) : AnyView(ErrorView(imageName: "internetError", errorText: "Нет интернета"))
                 ) {
                     HStack {
