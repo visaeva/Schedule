@@ -107,7 +107,7 @@ struct FilterView: View {
                     }
                 }
             }
-            
+            .background(Color.whiteNight)
             .navigationBarItems(leading:
                                     Button(action: {
                 presentationMode.wrappedValue.dismiss()

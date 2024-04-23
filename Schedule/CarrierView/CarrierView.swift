@@ -118,6 +118,7 @@ struct CarrierView: View {
                         .font(.system(size: 17, weight: .bold))
                 }
             }
+            .background(Color.whiteNight)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:
                                     Button(action: {
@@ -130,6 +131,7 @@ struct CarrierView: View {
             })
             .navigationBarTitle("", displayMode: .inline)
             .padding()
+            .background(Color.whiteNight)
         }
         .navigationBarBackButtonHidden(true)
         .onReceive(viewModel.$filteredCarrier) { filteredCarrier in

@@ -25,6 +25,7 @@ struct TabBarView: View {
                     
                 }
             }
+            .background(Color.whiteNight)
             .tabItem {
                 Label("", systemImage: "arrow.up.message.fill")
             }

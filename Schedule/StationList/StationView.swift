@@ -53,12 +53,14 @@ struct StationView: View {
                             }
                             .frame(height: 60)
                             .listRowSeparator(.hidden)
+                            .background(Color.whiteNight)
                         }
+                        .listRowBackground(Color.whiteNight)
                     }
                     .listStyle(.plain)
                 }
             }
-            
+            .background(Color.whiteNight)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:
                                     Button(action: {

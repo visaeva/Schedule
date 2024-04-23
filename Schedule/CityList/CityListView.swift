@@ -52,11 +52,14 @@ struct CityListView: View {
                             }
                             .frame(height: 60)
                             .listRowSeparator(.hidden)
+                            .background(Color.whiteNight)
                         }
+                        .listRowBackground(Color.whiteNight)
                     }
                     .listStyle(.plain)
                 }
             }
+            .background(Color.whiteNight)
             NavigationLink(destination: StationView( selectedStation: $selectedStation, selectedCity: $selectedCity), isActive: $showStationView) {
                 EmptyView()
             }

@@ -4,7 +4,7 @@ import UIKit
 struct SettingsView: View {
     @State private var isFeatureEnabled = false
     @AppStorage("isDarkMode") private var isDarkMode = false
-    @State private var showWebView = false
+  //  @State private var showWebView = false
     @State private var isInternetAvailable = true
     
     var body: some View {
@@ -17,7 +17,8 @@ struct SettingsView: View {
                     .tint(Color("blueUniversal"))
                 NavigationLink(
                     destination: isInternetAvailable ? AnyView(WebView()
-                        .navigationTitle("Пользовательское соглашение")) : AnyView(ErrorInternetView())
+                        .navigationTitle("Пользовательское соглашение") 
+                        .background(Color.whiteNight)) : AnyView(ErrorInternetView())
                 ) {
                     HStack {
                         Text("Пользовательское соглашение")
@@ -43,6 +44,7 @@ struct SettingsView: View {
                     .foregroundColor(Color("blackDay"))
                     .padding(.bottom, 20)
             }
+            .background(Color.whiteNight)
             .onChange(of: isDarkMode) { newValue in
                 toggleTheme(newValue)
             }
