@@ -1,18 +1,21 @@
 import SwiftUI
 
-struct ErrorInternetView: View {
+struct ErrorView: View {
+    let imageName: String
+    let errorText: String
+    
     var body: some View {
         ZStack {
             Color.whiteNight
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Image("internetError")
+                Image(imageName)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 223, height: 223)
                     .cornerRadius(70)
                 
-                Text("Нет интернета")
+                Text(errorText)
                     .font(.system(size: 24, weight: .bold))
                     .foregroundColor(Color("blackDay"))
             }
@@ -20,6 +23,12 @@ struct ErrorInternetView: View {
         }
     }
 }
+
 #Preview {
-    ErrorInternetView()
+    ErrorView(imageName: "serverError", errorText: "Ошибка сервера")
 }
+
+#Preview {
+    ErrorView(imageName: "internetError", errorText: "Нет интернета")
+}
+

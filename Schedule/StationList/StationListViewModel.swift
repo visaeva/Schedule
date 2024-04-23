@@ -1,6 +1,6 @@
 import Foundation
 
-class StationListViewModel: ObservableObject {
+final class StationListViewModel: ObservableObject {
     @Published var station: [StationsList]
     
     init() {

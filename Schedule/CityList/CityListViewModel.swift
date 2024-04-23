@@ -1,6 +1,6 @@
 import Foundation
 
-class CityListViewModel: ObservableObject {
+final class CityListViewModel: ObservableObject {
     @Published var city: [CityList]
     
     init() {

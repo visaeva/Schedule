@@ -1,7 +1,7 @@
 
 import Foundation
 
-class CarrierViewModel: ObservableObject {
+final class CarrierViewModel: ObservableObject {
     @Published var carrier: [CarrierList]
     @Published var filteredCarrier: [CarrierList]
 

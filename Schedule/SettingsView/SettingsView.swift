@@ -4,7 +4,6 @@ import UIKit
 struct SettingsView: View {
     @State private var isFeatureEnabled = false
     @AppStorage("isDarkMode") private var isDarkMode = false
-  //  @State private var showWebView = false
     @State private var isInternetAvailable = true
     
     var body: some View {
@@ -18,7 +17,7 @@ struct SettingsView: View {
                 NavigationLink(
                     destination: isInternetAvailable ? AnyView(WebView()
                         .navigationTitle("Пользовательское соглашение") 
-                        .background(Color.whiteNight)) : AnyView(ErrorInternetView())
+                        .background(Color.whiteNight)) : AnyView(ErrorView(imageName: "internetError", errorText: "Нет интернета"))
                 ) {
                     HStack {
                         Text("Пользовательское соглашение")

@@ -43,8 +43,7 @@
 		4C8328492BA234CB00A11534 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8328482BA234CB00A11534 /* Authorization.swift */; };
 		4CF5DF662BCD4E000071CEA0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5DF652BCD4E000071CEA0 /* SettingsView.swift */; };
 		4CF5DF682BCD55C40071CEA0 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5DF672BCD55C40071CEA0 /* WebView.swift */; };
-		4CF5DF742BCD6B850071CEA0 /* ErrorServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5DF732BCD6B850071CEA0 /* ErrorServerView.swift */; };
-		4CF5DF772BCD6B980071CEA0 /* ErrorInternetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5DF762BCD6B980071CEA0 /* ErrorInternetView.swift */; };
+		4CF5DF772BCD6B980071CEA0 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5DF762BCD6B980071CEA0 /* ErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,8 +82,7 @@
 		4C8328482BA234CB00A11534 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		4CF5DF652BCD4E000071CEA0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4CF5DF672BCD55C40071CEA0 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		4CF5DF732BCD6B850071CEA0 /* ErrorServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorServerView.swift; sourceTree = "<group>"; };
-		4CF5DF762BCD6B980071CEA0 /* ErrorInternetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorInternetView.swift; sourceTree = "<group>"; };
+		4CF5DF762BCD6B980071CEA0 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,8 +239,7 @@
 		4CF5DF712BCD6B710071CEA0 /* ErrorView */ = {
 			isa = PBXGroup;
 			children = (
-				4CF5DF732BCD6B850071CEA0 /* ErrorServerView.swift */,
-				4CF5DF762BCD6B980071CEA0 /* ErrorInternetView.swift */,
+				4CF5DF762BCD6B980071CEA0 /* ErrorView.swift */,
 			);
 			path = ErrorView;
 			sourceTree = "<group>";
@@ -330,11 +327,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CF5DF772BCD6B980071CEA0 /* ErrorInternetView.swift in Sources */,
+				4CF5DF772BCD6B980071CEA0 /* ErrorView.swift in Sources */,
 				4C7EC3352BC93EE5004CCF20 /* FilterView.swift in Sources */,
 				4C8328422BA2339E00A11534 /* CarrierService.swift in Sources */,
 				4C7BC2F62BC6C47900465C0F /* StationListViewModel.swift in Sources */,
-				4CF5DF742BCD6B850071CEA0 /* ErrorServerView.swift in Sources */,
 				4C7BC3012BC6E01E00465C0F /* CarrierList.swift in Sources */,
 				4C7EC33B2BC968D0004CCF20 /* CarrierInfo.swift in Sources */,
 				4C7414802B92250A00799D64 /* ContentView.swift in Sources */,
