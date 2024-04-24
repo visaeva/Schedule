@@ -46,9 +46,6 @@ struct SettingsView: View {
             .onChange(of: isDarkMode) { newValue in
                 toggleTheme(newValue)
             }
-            .onAppear {
-                checkInternetConnection()
-            }
             .navigationTitle("Пользовательское соглашение")
             .font(.system(size: 17, weight: .bold))
             .foregroundColor(.black)
@@ -73,7 +70,7 @@ struct SettingsView: View {
                 } else {
                     ErrorView(imageName: "internetError", errorText: "Нет интернета")
                         .background(Color.whiteNight)
-                        .navigationBarTitle("Error", displayMode: .inline)
+                        .navigationBarTitle("", displayMode: .inline)
                         .toolbar {
                             ToolbarItem(placement: .navigationBarLeading) {
                                 Button(action: {
@@ -87,6 +84,8 @@ struct SettingsView: View {
                         }
                 }
             }
+            .onAppear {
+                checkInternetConnection()}
         }
     }
     
