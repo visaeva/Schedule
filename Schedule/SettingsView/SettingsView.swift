@@ -5,6 +5,7 @@ struct SettingsView: View {
     @State private var isFeatureEnabled = false
     @AppStorage("isDarkMode") private var isDarkMode = false
     @State private var isInternetAvailable = true
+    @State private var isWebViewPresented = false
     
     var body: some View {
         NavigationView {
@@ -14,10 +15,9 @@ struct SettingsView: View {
                     .font(.system(size: 17))
                     .foregroundColor(Color("blackDay"))
                     .tint(Color("blueUniversal"))
-                NavigationLink(
-                    destination: isInternetAvailable ? AnyView(WebView()
-                        .background(Color.whiteNight)) : AnyView(ErrorView(imageName: "internetError", errorText: "Нет интернета"))
-                ) {
+                Button(action: {
+                    isWebViewPresented = true
+                }) {
                     HStack {
                         Text("Пользовательское соглашение")
                             .padding()
@@ -52,6 +52,41 @@ struct SettingsView: View {
             .navigationTitle("Пользовательское соглашение")
             .font(.system(size: 17, weight: .bold))
             .foregroundColor(.black)
+        }
+        .fullScreenCover(isPresented: $isWebViewPresented) {
+            NavigationView {
+                if isInternetAvailable {
+                    WebView()
+                        .background(Color.whiteNight)
+                        .navigationBarTitle("Пользовательское соглашение", displayMode: .inline)
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarLeading) {
+                                Button(action: {
+                                    isWebViewPresented = false
+                                }) {
+                                    Image(systemName: "chevron.left")
+                                    
+                                        .foregroundColor(Color("blackDay"))
+                                }
+                            }
+                        }
+                } else {
+                    ErrorView(imageName: "internetError", errorText: "Нет интернета")
+                        .background(Color.whiteNight)
+                        .navigationBarTitle("Error", displayMode: .inline)
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarLeading) {
+                                Button(action: {
+                                    isWebViewPresented = false
+                                }) {
+                                    Image(systemName: "chevron.left")
+                                        .font(.title)
+                                        .foregroundColor(Color("blackDay"))
+                                }
+                            }
+                        }
+                }
+            }
         }
     }
     
