@@ -11,14 +11,6 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
-            copyright()
-            //  search()
-            //sheduleOnStations()
-            //   nearestStations()
-            //  thread()
-            //   settlement()
-            //   carrier()
-            // stationList()
         }
     }
     
