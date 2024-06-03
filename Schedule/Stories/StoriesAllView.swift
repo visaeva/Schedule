@@ -2,36 +2,54 @@ import SwiftUI
 import Combine
 
 struct StoriesAllView: View {
-    private var stories: [Story] = [.story1, .story2, .story3]
+    private var selectedStory: Story
+    private var stories: [Story]
     private var currentStory: Story { stories[currentStoryIndex] }
     private var currentStoryIndex: Int { Int(progress * CGFloat(stories.count)) }
     
     @State private var progress: CGFloat = 0
     @State private var timer: Timer.TimerPublisher = Timer.publish(every: 5, on: .main, in: .common)
     @State private var cancellable: Cancellable?
+    @Environment(\.presentationMode) var presentationMode
     private let configuration: ConfigurationTimer
+    @Binding var viewedStories: Set<Int>
     
-    
-    init(stories: [Story] = [ .story1, .story2, .story3 ]) {
+    init(stories: [Story], selectedStory: Story, viewedStories: Binding<Set<Int>>) {
         self.stories = stories
-        configuration = ConfigurationTimer(storiesCount: stories.count)
-        timer = Self.createTimer(configuration: configuration)
+        self.selectedStory = selectedStory
+        self._viewedStories = viewedStories
+        self._progress = State(initialValue: CGFloat(stories.firstIndex(of: selectedStory)!) / CGFloat(stories.count))
+        self.configuration = ConfigurationTimer(storiesCount: stories.count)
+        self.timer = Self.createTimer(configuration: self.configuration)
     }
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
             StoryView(story: currentStory)
+                .gesture(
+                    DragGesture()
+                        .onEnded { value in
+                            if value.translation.width < -50 {
+                                nextStory()
+                            } else if value.translation.width > 50 {
+                                previousStory()
+                            }
+                        }
+                )
             ProgressBar(numberOfSections: stories.count, progress: progress)
                 .padding(.init(top: 28, leading: 12, bottom: 12, trailing: 12))
             
-            CloseButton(action: { print("close story")})
-                .padding(.top,30)
-                .padding(.trailing, -5)
+            CloseButton(action: {
+                presentationMode.wrappedValue.dismiss()
+            })
+            .padding(.top,30)
+            .padding(.trailing, -5)
             
         }
         .onAppear {
             timer = Self.createTimer(configuration: configuration)
             cancellable = timer.connect()
+            markStoryAsViewed()
         }
         .onDisappear {
             cancellable?.cancel()
@@ -43,6 +61,7 @@ struct StoriesAllView: View {
             nextStory()
             resetTimer()
         }
+        .navigationBarBackButtonHidden(true)
     }
     
     private func timerTick() {
@@ -52,6 +71,7 @@ struct StoriesAllView: View {
         }
         withAnimation {
             progress = nextProgress
+            markStoryAsViewed()
         }
     }
     
@@ -61,6 +81,17 @@ struct StoriesAllView: View {
         let nextStoryIndex = currentStoryIndex + 1 < storiesCount ? currentStoryIndex + 1 : 0
         withAnimation {
             progress = CGFloat(nextStoryIndex) / CGFloat(storiesCount)
+            markStoryAsViewed()
+        }
+    }
+    
+    private func previousStory() {
+        let storiesCount = stories.count
+        let currentStoryIndex = Int(progress * CGFloat(storiesCount))
+        let previousStoryIndex = currentStoryIndex - 1 >= 0 ? currentStoryIndex - 1 : storiesCount - 1
+        withAnimation {
+            progress = CGFloat(previousStoryIndex) / CGFloat(storiesCount)
+            markStoryAsViewed()
         }
     }
     
@@ -70,11 +101,15 @@ struct StoriesAllView: View {
         cancellable = timer.connect()
     }
     
+    private func markStoryAsViewed() {
+        viewedStories.insert(currentStoryIndex)
+    }
+    
     private static func createTimer(configuration: ConfigurationTimer) -> Timer.TimerPublisher {
         Timer.publish(every: configuration.timerTickInternal, on: .main, in: .common)
     }
 }
 
-#Preview {
-    StoriesAllView()
-}
+/*#Preview {
+ StoriesAllView()
+ }*/

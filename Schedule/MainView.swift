@@ -2,7 +2,9 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        TabBarView()
+        NavigationStack {
+            TabBarView()
+        }
     }
 }
 
@@ -16,7 +18,8 @@ struct TabBarView: View {
             // Главный экран
             ZStack {
                 VStack {
-                    storiesCellView
+                   // storiesCellView
+                    StoriesCellView()
                         .padding(.leading, 10)
                         .padding(.bottom, 20)
                     placeView

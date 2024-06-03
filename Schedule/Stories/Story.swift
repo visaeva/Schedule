@@ -1,7 +1,8 @@
 
 import SwiftUI
 
-struct Story {
+struct Story: Identifiable, Equatable, Hashable {
+    let id = UUID()
     let backgroundImage: UIImage
     let title: String
     let description: String
