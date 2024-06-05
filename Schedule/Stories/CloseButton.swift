@@ -6,7 +6,7 @@ struct CloseButton: View {
     
     var body: some View {
         Button(action: action) {
-            Image("close")
+            Image("closeButton")
                 .resizable()
                 .frame(width: 30, height: 30)
         }
