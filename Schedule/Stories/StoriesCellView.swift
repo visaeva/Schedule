@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct StoriesCellView: View {
-    let stories: [Story] = [.story1, .story2, .story3, .story3]
+    let stories: [Story] = [.story1, .story2, .story3, .story4]
     let imageHeight: CGFloat = 140
     let imageWidth: CGFloat = 92
     let images = ["1", "2", "3", "4"]

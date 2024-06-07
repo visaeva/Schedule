@@ -78,10 +78,15 @@ struct StoriesAllView: View {
     private func nextStory() {
         let storiesCount = stories.count
         let currentStoryIndex = Int(progress * CGFloat(storiesCount))
-        let nextStoryIndex = currentStoryIndex + 1 < storiesCount ? currentStoryIndex + 1 : 0
-        withAnimation {
-            progress = CGFloat(nextStoryIndex) / CGFloat(storiesCount)
-            markStoryAsViewed()
+        let nextStoryIndex = currentStoryIndex + 1
+        
+        if nextStoryIndex >= storiesCount {
+            presentationMode.wrappedValue.dismiss()
+        } else {
+            withAnimation {
+                progress = CGFloat(nextStoryIndex) / CGFloat(storiesCount)
+                markStoryAsViewed()
+            }
         }
     }
     

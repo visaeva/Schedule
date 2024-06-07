@@ -26,4 +26,10 @@ struct Story: Identifiable, Equatable, Hashable {
                                 description: "Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text",
                                 backgroundColor: .storyBackground
                               )
+    
+    static let story4 = Story(  backgroundImage: .story4,
+                              title: "Text Text Text Text Text Text Text Text Text",
+                                description: "Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text",
+                                backgroundColor: .storyBackground
+                              )
 }
