@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		4C475CDF2B9501CB0069C98D /* NearestStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C475CDE2B9501CB0069C98D /* NearestStationsService.swift */; };
+		4C63F5682BFCB16500639819 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C63F5672BFCB16500639819 /* StoryView.swift */; };
+		4C63F56D2BFCB1A100639819 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C63F56C2BFCB1A100639819 /* Story.swift */; };
+		4C63F5702BFE180C00639819 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C63F56F2BFE180C00639819 /* Font+Extensions.swift */; };
+		4C63F5772BFE1F6600639819 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C63F5762BFE1F6600639819 /* CloseButton.swift */; };
+		4C63F57A2BFE220A00639819 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C63F5792BFE220900639819 /* ProgressBar.swift */; };
+		4C63F57D2BFE243100639819 /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C63F57C2BFE243100639819 /* MaskView.swift */; };
+		4C63F57F2BFE245E00639819 /* MaskFragmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C63F57E2BFE245E00639819 /* MaskFragmentView.swift */; };
+		4C63F5812BFE2A8700639819 /* StoriesAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C63F5802BFE2A8700639819 /* StoriesAllView.swift */; };
+		4C63F5842BFE2ADF00639819 /* ConfigurationTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C63F5832BFE2ADF00639819 /* ConfigurationTimer.swift */; };
 		4C74147E2B92250A00799D64 /* ScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74147D2B92250A00799D64 /* ScheduleApp.swift */; };
 		4C7414802B92250A00799D64 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74147F2B92250A00799D64 /* ContentView.swift */; };
 		4C7414822B92251300799D64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C7414812B92251300799D64 /* Assets.xcassets */; };
@@ -48,6 +57,15 @@
 
 /* Begin PBXFileReference section */
 		4C475CDE2B9501CB0069C98D /* NearestStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestStationsService.swift; sourceTree = "<group>"; };
+		4C63F5672BFCB16500639819 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
+		4C63F56C2BFCB1A100639819 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		4C63F56F2BFE180C00639819 /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
+		4C63F5762BFE1F6600639819 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		4C63F5792BFE220900639819 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		4C63F57C2BFE243100639819 /* MaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
+		4C63F57E2BFE245E00639819 /* MaskFragmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskFragmentView.swift; sourceTree = "<group>"; };
+		4C63F5802BFE2A8700639819 /* StoriesAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesAllView.swift; sourceTree = "<group>"; };
+		4C63F5832BFE2ADF00639819 /* ConfigurationTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTimer.swift; sourceTree = "<group>"; };
 		4C74147A2B92250A00799D64 /* Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C74147D2B92250A00799D64 /* ScheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleApp.swift; sourceTree = "<group>"; };
 		4C74147F2B92250A00799D64 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +116,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C63F5862BFE2D7000639819 /* ProgressBar&Timer */ = {
+			isa = PBXGroup;
+			children = (
+				4C63F5792BFE220900639819 /* ProgressBar.swift */,
+				4C63F57C2BFE243100639819 /* MaskView.swift */,
+				4C63F57E2BFE245E00639819 /* MaskFragmentView.swift */,
+				4C63F5832BFE2ADF00639819 /* ConfigurationTimer.swift */,
+			);
+			path = "ProgressBar&Timer";
+			sourceTree = "<group>";
+		};
 		4C7414712B92250A00799D64 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +160,7 @@
 				4C7BC2DF2BC6C38600465C0F /* Stories */,
 				4C7F301B2BC332E10003142C /* PlaceView.swift */,
 				4C7F30122BC328670003142C /* MainView.swift */,
+				4C63F56F2BFE180C00639819 /* Font+Extensions.swift */,
 				4C8328372BA231DC00A11534 /* Service */,
 				4C7414812B92251300799D64 /* Assets.xcassets */,
 				4C7414832B92251300799D64 /* Preview Content */,
@@ -151,6 +181,11 @@
 			isa = PBXGroup;
 			children = (
 				4C7F300B2BC30EE20003142C /* StoriesCellView.swift */,
+				4C63F5672BFCB16500639819 /* StoryView.swift */,
+				4C63F5802BFE2A8700639819 /* StoriesAllView.swift */,
+				4C63F56C2BFCB1A100639819 /* Story.swift */,
+				4C63F5762BFE1F6600639819 /* CloseButton.swift */,
+				4C63F5862BFE2D7000639819 /* ProgressBar&Timer */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -333,26 +368,35 @@
 				4C7BC2F62BC6C47900465C0F /* StationListViewModel.swift in Sources */,
 				4C7BC3012BC6E01E00465C0F /* CarrierList.swift in Sources */,
 				4C7EC33B2BC968D0004CCF20 /* CarrierInfo.swift in Sources */,
+				4C63F5772BFE1F6600639819 /* CloseButton.swift in Sources */,
 				4C7414802B92250A00799D64 /* ContentView.swift in Sources */,
+				4C63F56D2BFCB1A100639819 /* Story.swift in Sources */,
 				4C83283C2BA232CC00A11534 /* ScheduleService.swift in Sources */,
 				4C8328442BA233E100A11534 /* StationListService.swift in Sources */,
 				4C8328492BA234CB00A11534 /* Authorization.swift in Sources */,
 				4C7BC2D72BC6AD3B00465C0F /* SearchBar.swift in Sources */,
+				4C63F57A2BFE220A00639819 /* ProgressBar.swift in Sources */,
 				4C7BC2F32BC6C45800465C0F /* StationList.swift in Sources */,
 				4C7EC3382BC940CA004CCF20 /* TimeSlot.swift in Sources */,
 				4C83283A2BA2325000A11534 /* SearchService.swift in Sources */,
 				4C7BC2CE2BC52A8E00465C0F /* CityListView.swift in Sources */,
 				4C8328402BA2336F00A11534 /* NearestSettelementService.swift in Sources */,
 				4C7BC2E72BC6C40000465C0F /* StationView.swift in Sources */,
+				4C63F57F2BFE245E00639819 /* MaskFragmentView.swift in Sources */,
+				4C63F57D2BFE243100639819 /* MaskView.swift in Sources */,
 				4C475CDF2B9501CB0069C98D /* NearestStationsService.swift in Sources */,
 				4C7F300C2BC30EE20003142C /* StoriesCellView.swift in Sources */,
 				4CF5DF662BCD4E000071CEA0 /* SettingsView.swift in Sources */,
+				4C63F5702BFE180C00639819 /* Font+Extensions.swift in Sources */,
 				4C7BC2D42BC530F100465C0F /* CityListViewModel.swift in Sources */,
 				4C7F30132BC328670003142C /* MainView.swift in Sources */,
 				4CF5DF682BCD55C40071CEA0 /* WebView.swift in Sources */,
 				4C74147E2B92250A00799D64 /* ScheduleApp.swift in Sources */,
 				4C7BC2F82BC6C84300465C0F /* CarrierView.swift in Sources */,
 				4C7F301C2BC332E10003142C /* PlaceView.swift in Sources */,
+				4C63F5812BFE2A8700639819 /* StoriesAllView.swift in Sources */,
+				4C63F5842BFE2ADF00639819 /* ConfigurationTimer.swift in Sources */,
+				4C63F5682BFCB16500639819 /* StoryView.swift in Sources */,
 				4C83283E2BA2331100A11534 /* ThreadService.swift in Sources */,
 				4C7BC2FE2BC6DF9000465C0F /* CarrierViewModel.swift in Sources */,
 				4C7BC2D12BC52CF700465C0F /* CityList.swift in Sources */,
