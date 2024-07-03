@@ -16,16 +16,22 @@ struct StoriesCellView: View {
                         let story = stories[index]
                         NavigationLink(destination: StoriesAllView(stories: stories, selectedStory: story, viewedStories: $viewedStories)) {
                             ZStack(alignment: .bottomLeading) {
-                                Image(images[index])
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: imageWidth, height: imageHeight)
-                                    .cornerRadius(16)
-                                    .opacity(viewedStories.contains(index) ? 0.5 : 1.0)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 16)
-                                            .stroke(Color("blueUniversal"), lineWidth: viewedStories.contains(index) ? 0 : 4)
-                                    )
+                                if index < images.count {
+                                    Image(images[index])
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: imageWidth, height: imageHeight)
+                                        .cornerRadius(16)
+                                        .opacity(viewedStories.contains(index) ? 0.5 : 1.0)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 16)
+                                                .stroke(Color("blueUniversal"), lineWidth: viewedStories.contains(index) ? 0 : 4))
+                                } else {
+                                    Rectangle()
+                                        .fill(Color.gray)
+                                        .frame(width: imageWidth, height: imageHeight)
+                                        .cornerRadius(16)
+                                }
                                 Text("Text Text\nText Text\nText Text Text")
                                     .font(.system(size: 12, weight: .regular))
                                     .multilineTextAlignment(.leading)
