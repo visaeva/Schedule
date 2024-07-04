@@ -11,7 +11,7 @@ struct MainView: View {
 struct TabBarView: View {
     @State private var storiesCellView: StoriesCellView = StoriesCellView()
     @State private var placeView: PlaceView = PlaceView()
-    @State private var settingsView: SettingsView = SettingsView()
+    @State private var settingsView: SettingsView = SettingsView(viewModel: SettingsViewModel())
     
     var body: some View {
         TabView {

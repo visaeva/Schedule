@@ -115,6 +115,6 @@ struct StoriesAllView: View {
     }
 }
 
-/*#Preview {
- StoriesAllView()
- }*/
+#Preview {
+    StoriesAllView(stories: [Story.story1], selectedStory: Story.story1, viewedStories: .constant(Set<Int>()))
+ }

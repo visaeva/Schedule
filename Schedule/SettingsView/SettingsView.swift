@@ -2,21 +2,21 @@ import SwiftUI
 import UIKit
 
 struct SettingsView: View {
-    @State private var isFeatureEnabled = false
-    @AppStorage("isDarkMode") private var isDarkMode = false
-    @State private var isInternetAvailable = true
-    @State private var isWebViewPresented = false
+    @ObservedObject var viewModel: SettingsViewModel
     
     var body: some View {
         NavigationView {
             VStack {
-                Toggle("Темная тема", isOn: $isDarkMode)
+                Toggle("Темная тема", isOn: $viewModel.isDarkMode)
                     .padding()
                     .font(.system(size: 17))
                     .foregroundColor(Color("blackDay"))
                     .tint(Color("blueUniversal"))
+                    .onChange(of: viewModel.isDarkMode) { newValue in
+                        toggleTheme(newValue)
+                    }
                 Button(action: {
-                    isWebViewPresented = true
+                    viewModel.isWebViewPresented = true
                 }) {
                     HStack {
                         Text("Пользовательское соглашение")
@@ -43,23 +43,20 @@ struct SettingsView: View {
                     .padding(.bottom, 20)
             }
             .background(Color.whiteNight)
-            .onChange(of: isDarkMode) { newValue in
-                toggleTheme(newValue)
-            }
             .navigationTitle("Пользовательское соглашение")
             .font(.system(size: 17, weight: .bold))
             .foregroundColor(.black)
         }
-        .fullScreenCover(isPresented: $isWebViewPresented) {
+        .fullScreenCover(isPresented: $viewModel.isWebViewPresented) {
             NavigationView {
-                if isInternetAvailable {
+                if viewModel.isInternetAvailable {
                     WebView()
                         .background(Color.whiteNight)
                         .navigationBarTitle("Пользовательское соглашение", displayMode: .inline)
                         .toolbar {
                             ToolbarItem(placement: .navigationBarLeading) {
                                 Button(action: {
-                                    isWebViewPresented = false
+                                    viewModel.isWebViewPresented = false
                                 }) {
                                     Image(systemName: "chevron.left")
                                     
@@ -74,7 +71,7 @@ struct SettingsView: View {
                         .toolbar {
                             ToolbarItem(placement: .navigationBarLeading) {
                                 Button(action: {
-                                    isWebViewPresented = false
+                                    viewModel.isWebViewPresented = false
                                 }) {
                                     Image(systemName: "chevron.left")
                                         .font(.title)
@@ -85,42 +82,20 @@ struct SettingsView: View {
                 }
             }
             .onAppear {
-                checkInternetConnection()}
+                viewModel.checkInternetConnection()
+            }
+            
         }
     }
     
-    func toggleTheme(_ isDarkMode: Bool) {
+    private func toggleTheme(_ isDarkMode: Bool) {
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
             if let window = windowScene.windows.first {
                 window.overrideUserInterfaceStyle = isDarkMode ? .dark : .light
             }
         }
     }
-    
-    func checkInternetConnection() {
-        guard let url = URL(string: "https://yandex.ru/legal/practicum_offer/") else { return }
-        
-        URLSession.shared.dataTask(with: url) { (_, response, error) in
-            if let error = error {
-                print("Error checking internet connection: \(error)")
-                DispatchQueue.main.async {
-                    self.isInternetAvailable = false
-                }
-                return
-            }
-            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
-                DispatchQueue.main.async {
-                    self.isInternetAvailable = true
-                }
-            } else {
-                DispatchQueue.main.async {
-                    self.isInternetAvailable = false
-                }
-            }
-        }.resume()
-    }
 }
-
 #Preview {
-    SettingsView()
+    SettingsView(viewModel: SettingsViewModel())
 }
